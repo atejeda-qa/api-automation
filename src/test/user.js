@@ -10,8 +10,8 @@ describe('User requests ', () => {
         "data": {
             "type": "login",
             "attributes": {
-                "email": "email",
-                "password": "password",
+                "email": `${process.env.USER_EMAIL}`,
+                "password": `${process.env.USER_PASSWORD}`,
                 "login_attempts": 1
             }
         }
@@ -28,7 +28,7 @@ describe('User requests ', () => {
             .send(loginData)
             .then((res) => {
                 expect(res.status).eql(200)
-                expect(res.body).haveOwnProperty('data')
+                expect(res.body.data.attributes).have.property('id_token')
             })
     })
 })
