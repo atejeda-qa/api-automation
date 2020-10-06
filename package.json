@@ -4,7 +4,7 @@
   "description": "project to learn api automation",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r dotenv/config"
+    "test": "mocha -r dotenv/config src/test"
   },
   "keywords": [
     "automation"

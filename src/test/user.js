@@ -1,6 +1,6 @@
 import supertest from 'supertest'
 import { expect } from 'chai'
-import routes from './helpers/routes'
+import routes from '../helpers/routes'
 
 const request = supertest(`${process.env.BASE_URL}`)
 
