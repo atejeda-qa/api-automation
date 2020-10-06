@@ -4,7 +4,7 @@ import routes from '../helpers/routes'
 
 const request = supertest(`${process.env.BASE_URL}`)
 
-describe('User requests ', () => {
+describe('POST /login', () => {
     const loginData = {
         "meta": {},
         "data": {
@@ -17,7 +17,7 @@ describe('User requests ', () => {
         }
     }
 
-    it('Login succesfull', () => {
+    it('Endpoint should return token', () => {
         request
             .post(`${routes.LOGIN}`)
             .set({
@@ -29,6 +29,8 @@ describe('User requests ', () => {
             .then((res) => {
                 expect(res.status).eql(200)
                 expect(res.body.data.attributes).have.property('id_token')
+                expect(res.body.data.attributes).have.property('access_token')
+                expect(res.body.data.attributes).have.property('refresh_token')
             })
     })
 })
