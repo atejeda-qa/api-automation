@@ -1,4 +1,5 @@
 const routes = {
+    SERVER: '/are-you-alive',
     LOGIN: '/login',
     INVESTMENTS: {
         INVESTMENT: '/investment',
